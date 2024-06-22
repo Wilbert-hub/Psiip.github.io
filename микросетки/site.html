@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 0px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #d2d2d2;
+}
+
+.title {
+  background-color: #ff0066;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0px 0px 0 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 0px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+button {
+  background-color: #ff0066;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: rgb(4, 155, 255);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.Firstone { /* Добавлено */
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 0 0 10px 10px; /* Изменено */
+    border-radius: 0px;
+    height: 40px;
+    padding-left: 10px;
+    margin-left: 10px;
+    border: 1px solid #000; 
+
+    background-color: #fff;
+    border-radius: 10px 10px 0 0; /* Изменено */
+    border-bottom: none; /* Добавлено */
+    width: 97.2%;
+    margin-left: 0px;
+    background-color: rgb(239, 76, 130);
+    color: white;
+    font-size: 20px;
+    margin-top: 0;
+    padding-top: 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="Firstone">
+    <h2>Экспресс заказ</h2>
+    <span class="close-button">X</span>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="name"></label>
+      <input type="text" id="name" name="name" placeholder="Ваше имя">
+    </div>
+    <div class="form-group">
+      
+      <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона">
+    </div>
+    <div class="form-group">
+      <label for="size">Размер:</label>
+      <select id="size" name="size">
+        <option value="XL">XL</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="delivery">Доставка:</label>
+      <select id="delivery" name="delivery">
+        <option value="самовывоз">Самовывоз</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="address">Адрес доставки и дополнительная информация:</label>
+      <textarea id="address" name="address" ></textarea>
+    </div>
+    <button type="submit" style="background-color: #ffffff; color: rgb(4, 155, 255); border: #000; border-width: 2px;">Заказать</button>
+  </form>
+</div>
+
+<script>
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', () => {
+  // Add your code to close the modal or perform other actions here.
+  console.log('Close button clicked!');
+});
+</script>
+</body>
+</html>

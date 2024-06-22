@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание по HTML и JavaScript</title>
+    <style>
+        #name {
+            font-size: 16px;
+        }
+
+        #info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="name">Молчун Никита Сергеевич</p>
+    <a href="https://www.youtube.com/" id="favorite-site">Мой любимый сайт</a>
+    <img src="Untitled.png" style="height: 150px; width: 150px;" alt="Пример изображения" id="image">
+
+    <button id="style-button">Применить стили</button>
+
+    <div id="info"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loadingStatus = document.readyState;
+                alert(`Статус загрузки документа: ${loadingStatus}`);
+            }, 5000);
+
+            setTimeout(() => {
+                const networkInfo = `Имя компьютера: ${navigator.appName}`;
+                document.getElementById('info').innerText = networkInfo;
+            }, 4000);
+
+            document.getElementById('image').addEventListener('click', () => {
+                document.getElementById('image').remove();
+            });
+
+            document.getElementById('style-button').addEventListener('click', () => {
+                const nameElement = document.getElementById('name');
+                nameElement.style.color = 'red';
+                nameElement.style.backgroundColor = 'gray';
+                nameElement.style.fontFamily = 'Verdana, sans-serif';
+                nameElement.style.fontWeight = 'bold';
+                nameElement.style.fontSize = '20px';
+                nameElement.style.border = '3px solid green';
+            });
+        });
+    </script>
+</body>
+</html>

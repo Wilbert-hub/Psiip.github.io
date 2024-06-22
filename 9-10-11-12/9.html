@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем внешний CSS файл -->
+    <script src="showTime.js"></script> <!-- Подключаем скрипт для отображения времени -->
+</head>
+<body>
+    <button class="button" onclick="showTime()">Показать год</button>
+
+    <div id="name-output"></div>
+    <script>
+        // 2. Скрипт для отображения Фамилии и Имени p+5 раз внедрен в компонент
+        const p = 12; // Ваш номер варианта
+        const iterations = p + 5;
+        const lastName = "Молчун";
+        const firstName = "Никита";
+        let output = '';
+        for (let i = 0; i < iterations; i++) {
+            output += `${lastName} ${firstName}<br>`;
+        }
+        document.getElementById('name-output').innerHTML = output;
+    </script>
+
+    <div id="array-output"></div>
+    <script>
+        // 3. Скрипт для работы с массивом через script.innerHTML
+        let script = document.createElement('script');
+        script.innerHTML = `
+            let arr = [12, 5, 8, 130, 44, 9, 15];
+            let evenCount = 0;
+            let maxElement = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) evenCount++;
+                if (arr[i] > maxElement) maxElement = arr[i];
+            }
+            document.getElementById('array-output').innerHTML = \`
+                Исходный массив: \${arr.join(', ')}<br>
+                Количество четных элементов: \${evenCount}<br>
+                Максимальный элемент: \${maxElement}
+            \`;
+        `;
+        document.body.appendChild(script);
+    </script>
+
+    <div>
+        <label for="input-x">Введите значение x:</label>
+        <input type="number" id="input-x">
+        <button class="button" onclick="calculate()">Рассчитать</button>
+    </div>
+    <div id="formula-output"></div>
+    <script src="external.js"></script> <!-- Подключаем скрипт для расчетов через URL -->
+
+    <div id="string-output"></div>
+    <script>
+        // 5. Работа со строками STRING
+        const S1 = "Молчун";
+        const S2 = "Гродно, Беларусь";
+
+        const S2Length = S2.length;
+        const S1Reversed = S1.split('').reverse().join('');
+        const S2LowerCase = S2.toLowerCase();
+
+        document.getElementById('string-output').innerHTML = `
+            Длина строки S2: ${S2Length}<br>
+            Строка S1 в обратном порядке: ${S1Reversed}<br>
+            Строка S2 в нижнем регистре: ${S2LowerCase}
+        `;
+    </script>
+    <script src="https://example.com/external.js"></script>
+    <a href="javascript:(function(){alert('Привет, мир!');})();">Кликните, чтобы выполнить скрипт</a>
+</body>
+</html>
